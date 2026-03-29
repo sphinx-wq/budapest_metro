@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subways of Budapest</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+
+<div id="menu">
+    <h1>Subways of Budapest</h1>
+
+    <input id="playerNameInput" placeholder="Your name" autocomplete="off">
+    <br><br>
+
+    <button style="border:none; background:#4b0e64; color:#fff; padding:10px 20px; border-radius:10px; cursor:pointer;" id="gameB">Start Game</button>
+    <br><br>
+
+    <button id="ruleB">Rules</button>
+
+    <div id="ruleT">
+        <h2>How to Play</h2>
+        <p>Build four metro lines on a 10×10 grid.</p>
+        <ul>
+            <li>Draw a card (A/B/C/D/Joker)</li>
+            <li>Click an endpoint → click a matching station</li>
+            <li>Lines: up/down, left/right, or diagonal</li>
+            <li>Round ends after 8 cards</li>
+        </ul>
+        <button id="ruleC">Close</button>
+    </div>
+</div>
+
+<div id="gameScreen" style="display:none;">
+    <div style="display:flex; justify-content:space-between; padding:20px; background:#ececec; margin:20px; border-radius:15px;">
+        <div id="userName">Player</div>
+        <div id="timerDisplay">00:00</div>
+        <div id="currentLineDisplay">M1 (Yellow)</div>
+    </div>
+
+    <div style="text-align:center; margin:20px;">
+        <canvas id="gameBoard" width="600" height="600"
+                style="border:3px solid #4b0e64; border-radius:15px; background:#f8f8f8;"></canvas>
+    </div>
+
+    <div style="text-align:center; margin:20px;">
+        <button id="drawCardBtn">Draw Card</button>
+        <button id="skipTurnBtn">Skip Turn</button>
+        <button id="endGameBtn2">End Game</button>
+    </div>
+
+    <div id="cardDisplay" style="text-align:center; margin:20px; font-size:48px; color:#4b0e64;">
+        No card drawn
+    </div>
+
+    <div id="scorePanel" style="margin: 10px; font-family: Arial;">
+    <p>Round Score: <span id="roundScore">0</span></p>
+    <p>Railway Points: <span id="railwayScore">0</span></p>
+    <p>Total Score: <span id="totalScore">0</span></p>
+    </div>
+</div>
+
+<div id="customAlert" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.5);
+                 justify-content:center; align-items:center;">
+    <div style="background:#fff; padding:2rem; border-radius:1rem; text-align:center;">
+        <p id="alertMessage"></p>
+        <button id="alertOk">OK</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
